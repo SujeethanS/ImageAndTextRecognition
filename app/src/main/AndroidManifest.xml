@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.touristguidesrilanka"
     android:installLocation="preferExternal">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -26,6 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".TensorFlowImage"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -38,12 +38,9 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-
         <activity
             android:name=".PlaceActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -54,8 +51,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 
 </manifest>
