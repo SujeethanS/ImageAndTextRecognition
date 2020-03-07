@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_place"
+        android:icon="@drawable/ic_action_place"
+        android:title="@string/places" />
+
+    <item
+        android:id="@+id/navigation_resurent"
+        android:icon="@drawable/ic_action_resturent"
+        android:title="@string/restaurants" />
+
+    <item
+        android:id="@+id/navigation_hotel"
+        android:icon="@drawable/ic_action_hotel"
+        android:title="@string/hotels" />
+
+    <!--<item
+        android:id="@+id/navigation_taxi"
+        android:icon="@drawable/ic_action_taxi"
+        android:title="@string/taxi" />-->
+
+</menu>
