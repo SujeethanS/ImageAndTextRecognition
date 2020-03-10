@@ -16,7 +16,6 @@ tools:context="com.example.touristguidesrilanka.TensorFlowImage">
     android:layout_height="300dp"
     android:layout_gravity="center|top" />
 
-
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="80dp"
@@ -50,7 +49,7 @@ tools:context="com.example.touristguidesrilanka.TensorFlowImage">
     android:layout_height="48dp"
     android:layout_gravity="bottom|center"
     android:layout_marginBottom="50dp"
-    android:text="@string/toggle_camera"
+    android:text="toggle camera"
     android:textAllCaps="false"
     android:textColor="@android:color/black" />
 
@@ -59,7 +58,7 @@ tools:context="com.example.touristguidesrilanka.TensorFlowImage">
     android:layout_width="match_parent"
     android:layout_height="48dp"
     android:layout_gravity="bottom|center"
-    android:text="@string/detect_object"
+    android:text="detect object"
     android:textAllCaps="false"
     android:textColor="@android:color/black"
     android:visibility="gone" />

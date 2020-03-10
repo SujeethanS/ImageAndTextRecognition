@@ -31,7 +31,7 @@ public class TensorFlowImage extends AppCompatActivity {
 
     private Executor executor = Executors.newSingleThreadExecutor();
     private TextView textViewResult;
-    private Button btnDetectObject, btnToggleCamera;
+    private Button btnDetectObject;
     private ImageView imageViewResult;
     private CameraView cameraView;
 
@@ -45,7 +45,7 @@ public class TensorFlowImage extends AppCompatActivity {
         textViewResult = findViewById(R.id.textViewResult);
         textViewResult.setMovementMethod(new ScrollingMovementMethod());
 
-        btnToggleCamera = findViewById(R.id.btnToggleCamera);
+        Button btnToggleCamera = findViewById(R.id.btnToggleCamera);
         btnDetectObject = findViewById(R.id.btnDetectObject);
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {

@@ -1,6 +1,6 @@
 package com.example.touristguidesrilanka;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    static Activity activity;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
+            assert selectedFragment != null;
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     selectedFragment).commit();
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        activity = this;
 
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
