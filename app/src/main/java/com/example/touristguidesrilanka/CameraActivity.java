@@ -22,10 +22,10 @@ import java.util.concurrent.Executors;
 
 public class CameraActivity extends AppCompatActivity {
 
-    private static final String MODEL_PATH = "mobilenet_quant_v1_224.tflite";
+    /*private static final String MODEL_PATH = "mobilenet_quant_v1_224.tflite";
     private static final boolean QUANT = true;
     private static final String LABEL_PATH = "labels.txt";
-    private static final int INPUT_SIZE = 224;
+    private static final int INPUT_SIZE = 224;*/
 
     private static Classifier classifier;
 
@@ -64,7 +64,7 @@ public class CameraActivity extends AppCompatActivity {
 
                 Bitmap bitmap = cameraKitImage.getBitmap();
 
-                bitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, false);
+                bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false);
 
                 imageViewResult.setImageBitmap(bitmap);
 
@@ -125,12 +125,11 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    classifier = TensorFlowImageClassifier.create(
-                            getAssets(),
-                            MODEL_PATH,
-                            LABEL_PATH,
-                            INPUT_SIZE,
-                            QUANT);
+                    classifier = TensorFlowImageClassifier.create(getAssets(),
+                            "mobilenet_quant_v1_224.tflite",
+                            "labels.txt",
+                            224,
+                            true);
                     makeButtonVisible();
                 } catch (final Exception e) {
                     throw new RuntimeException("Error initializing TensorFlow!", e);
