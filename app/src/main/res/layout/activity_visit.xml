@@ -5,20 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray">
+        android:background="@android:color/holo_blue_light">
 
-        <include layout="@layout/place_single"/>
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hotels \n comming soon..."
-            android:textAlignment="center"
+            android:text="Places \n comming soon..."
             android:textSize="30sp"
-            android:layout_centerInParent="true"/>
+            android:textAlignment="center"
+            android:layout_centerInParent="true"/>-->
+
+        <ListView
+            android:id="@+id/listView_places"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
 
     </RelativeLayout>
-
 </android.support.constraint.ConstraintLayout>

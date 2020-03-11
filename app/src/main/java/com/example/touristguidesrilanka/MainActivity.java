@@ -1,66 +1,50 @@
 package com.example.touristguidesrilanka;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
-import android.view.MenuItem;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    static Activity activity;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
-
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    selectedFragment = new HomeFragment();
-                    break;
-
-                case R.id.navigation_place:
-                    selectedFragment = new PlacesFragment();
-                    break;
-
-                case R.id.navigation_resurent:
-                    selectedFragment = new ResturentsFragment();
-                    break;
-
-                case R.id.navigation_hotel:
-                    selectedFragment = new HotelsFragment();
-                    break;
-            }
-
-            assert selectedFragment != null;
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    selectedFragment).commit();
-
-            return true;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        activity = this;
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("fdjfkjsfshfiuefeh");
 
-        //I added this if statement to keep the selected fragment when rotating the device
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
-        }
+        CardView cardView = findViewById(R.id.cardView);
+        cardView.setBackgroundResource(R.drawable.card_backgroung);
+        CardView cardView1 = findViewById(R.id.cardView1);
+        cardView1.setBackgroundResource(R.drawable.card_backgroung);
+        CardView cardView2 = findViewById(R.id.cardView2);
+        cardView2.setBackgroundResource(R.drawable.card_backgroung);
 
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,VisitActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,CameraActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

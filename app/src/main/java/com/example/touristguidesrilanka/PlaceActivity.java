@@ -13,8 +13,6 @@ public class PlaceActivity extends AppCompatActivity {
     private TextView placeName,placeDetails,placeAddress;
     private ImageView imageViewPlace;
 
-    private PlacesFragment placesFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +23,6 @@ public class PlaceActivity extends AppCompatActivity {
         placeAddress = findViewById(R.id.address);
 
         imageViewPlace = findViewById(R.id.img_place);
-
-        placesFragment = new PlacesFragment();
 
     }
 
@@ -46,7 +42,7 @@ public class PlaceActivity extends AppCompatActivity {
         placeName.setText(place_name);
         placeAddress.setText(place_address);
         //imageViewPlace.setImageBitmap(bmp);
-        imageViewPlace.setImageResource(PlacesFragment.placeImages[Integer.parseInt(position)]);
+        imageViewPlace.setImageResource(VisitActivity.placeImages[Integer.parseInt(position)]);
 
     }
 

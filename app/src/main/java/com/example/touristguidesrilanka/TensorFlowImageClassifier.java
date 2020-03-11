@@ -1,9 +1,12 @@
 package com.example.touristguidesrilanka;
 
+
 import android.annotation.SuppressLint;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+
+import org.tensorflow.lite.Interpreter;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -18,7 +21,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class TensorFlowImageClassifier  implements Classifier {
+/**
+ * Created by amitshekhar on 17/03/18.
+ */
+
+public class TensorFlowImageClassifier implements Classifier {
 
     private static final int MAX_RESULTS = 3;
     private static final int BATCH_SIZE = 1;

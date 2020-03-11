@@ -1,8 +1,8 @@
 package com.example.touristguidesrilanka;
 
 import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -20,14 +20,14 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class TensorFlowImage extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     private static final String MODEL_PATH = "mobilenet_quant_v1_224.tflite";
     private static final boolean QUANT = true;
     private static final String LABEL_PATH = "labels.txt";
     private static final int INPUT_SIZE = 224;
 
-    private Classifier classifier;
+    private static Classifier classifier;
 
     private Executor executor = Executors.newSingleThreadExecutor();
     private TextView textViewResult;
@@ -38,7 +38,7 @@ public class TensorFlowImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tensor_flow_image);
+        setContentView(R.layout.activity_camera);
 
         cameraView = findViewById(R.id.cameraView);
         imageViewResult = findViewById(R.id.imageViewResult);
@@ -148,3 +148,4 @@ public class TensorFlowImage extends AppCompatActivity {
         });
     }
 }
+
